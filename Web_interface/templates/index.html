@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AIoT Digital Twin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">DT</span>
+        <div>
+          <p class="title">AIoT Digital Twin Operations</p>
+          <p class="subtitle">Monitoring • Digital Twin • Maintenance</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <div class="status-pill healthy">System Status: Healthy</div>
+        <button class="icon-button">Alerts (3)</button>
+        <button class="icon-button">Admin</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav>
+          <h3>Monitoring</h3>
+          <ul>
+            <li class="active">Performance</li>
+            <li>Hardware Health</li>
+          </ul>
+          <h3>Digital Twin</h3>
+          <ul>
+            <li>Map View</li>
+            <li>Device Detail View</li>
+          </ul>
+          <h3>Maintenance</h3>
+          <ul>
+            <li>Alerts & Tickets</li>
+            <li>Approval Workflow</li>
+            <li>History & Reports</li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section class="hero">
+          <div>
+            <h1>Performance Overview</h1>
+            <p>
+              Monitoring shows what is happening, the digital twin explains why, and
+              maintenance decides what to do next.
+            </p>
+          </div>
+          <button class="primary">Generate Report</button>
+        </section>
+
+        <section class="grid two-col">
+          <article class="card">
+            <h2>Environmental Temperature Gauge</h2>
+            <div class="gauge">
+              <div class="gauge-inner">
+                <p class="gauge-value">34°C</p>
+                <p class="gauge-label">Optimal 25–30°C</p>
+              </div>
+              <div class="gauge-scale">
+                <span class="good"></span>
+                <span class="warn"></span>
+                <span class="bad"></span>
+              </div>
+            </div>
+            <div class="metric-row">
+              <div>
+                <p class="metric-title">Estimated Efficiency</p>
+                <p class="metric-value">92%</p>
+              </div>
+              <div>
+                <p class="metric-title">Thermal Stress</p>
+                <p class="metric-value warn-text">Moderate</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h2>Power & Radiation Graphs</h2>
+            <div class="chart">
+              <div class="chart-line expected"></div>
+              <div class="chart-line actual"></div>
+            </div>
+            <div class="legend">
+              <span><i class="dot expected"></i>Expected Power</span>
+              <span><i class="dot actual"></i>Actual Power</span>
+              <span><i class="dot radiation"></i>Solar Radiation</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid two-col">
+          <article class="card">
+            <h2>Hardware Health Summary</h2>
+            <div class="health-grid">
+              <div class="health-card">
+                <p>Motor System</p>
+                <span class="badge healthy">Healthy</span>
+              </div>
+              <div class="health-card">
+                <p>Solar Tracker</p>
+                <span class="badge warn">Degraded</span>
+              </div>
+              <div class="health-card">
+                <p>MPU6050 Sensor</p>
+                <span class="badge healthy">Healthy</span>
+              </div>
+              <div class="health-card">
+                <p>Current Sensor</p>
+                <span class="badge healthy">Healthy</span>
+              </div>
+              <div class="health-card">
+                <p>PV Module Array</p>
+                <span class="badge healthy">Healthy</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h2>Rooftop Module Overview</h2>
+            <div class="module-grid">
+              <div class="module ok">Module 1</div>
+              <div class="module ok">Module 2</div>
+              <div class="module fault">Module 3</div>
+              <div class="module ok">Module 4</div>
+              <div class="module ok">Module 5</div>
+              <div class="module ok">Module 6</div>
+              <div class="module ok">Module 7</div>
+              <div class="module ok">Module 8</div>
+              <div class="module warn">Module 9</div>
+              <div class="module ok">Module 10</div>
+            </div>
+          </article>
+        </section>
+
+        <section class="grid two-col">
+          <article class="card">
+            <h2>Digital Twin Map View</h2>
+            <div class="map">
+              <div class="map-marker healthy" style="top: 20%; left: 30%;"></div>
+              <div class="map-marker warn" style="top: 60%; left: 50%;"></div>
+              <div class="map-marker fault" style="top: 35%; left: 70%;"></div>
+              <div class="map-info">
+                <h3>PV System #07</h3>
+                <p>Actuation Subsystem Degradation</p>
+                <p>Confidence 82%</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h2>Maintenance Approval</h2>
+            <div class="ticket">
+              <p class="ticket-title">Ticket #MT-2024-118</p>
+              <p>Device: PV System #07</p>
+              <p>Fault: Actuation Subsystem Degradation</p>
+              <p>Evidence: Angle tracking error + power deviation</p>
+              <div class="ticket-actions">
+                <button class="primary">Approve</button>
+                <button class="ghost">Request Review</button>
+                <button class="danger">Reject</button>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
